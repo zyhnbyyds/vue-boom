@@ -12,6 +12,9 @@
     "url": "https://github.com/zyhnbyyds/vue-boom.git"
   },
   "exports": {
+    ".": {
+      "default": "./dist/index.js"
+    },
     "./package.json": "./package.json"
   },
   "main": "./dist/index.js",
