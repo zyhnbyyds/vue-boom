@@ -19,8 +19,7 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "public"
+    "dist"
   ],
   "scripts": {
     "build": "tsdown --env.NODE_ENV=production",
