@@ -28,8 +28,8 @@
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "test": "vitest",
-    "release": "bumpp && nrm use npm && pnpm publish",
-    "prerelease": "pnpm lint && pnpm build",
+    "release": "bumpp && pnpm publish",
+    "prerelease": "pnpm lint && pnpm build && nrm use npm",
     "uno": "unocss src/components/*.vue -m -o dist/style.css",
     "postpublish": "nrm use taobao"
   },
