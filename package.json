@@ -1,7 +1,7 @@
 {
   "name": "vue-boom",
   "type": "module",
-  "version": "0.1.12",
+  "version": "0.1.11",
   "private": false,
   "description": "Some ui components",
   "author": {
@@ -30,7 +30,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "release": "bumpp && nrm use npm && pnpm publish",
-    "preRelease": "pnpm build && pnpm lint",
+    "prerelease": "pnpm build && pnpm lint",
     "postpublish": "nrm use taobao"
   },
   "dependencies": {
