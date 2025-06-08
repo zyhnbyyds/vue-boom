@@ -2,7 +2,6 @@ import path from 'node:path'
 import Vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
@@ -14,7 +13,6 @@ export default defineConfig({
   plugins: [
     AutoImport({
       imports: [
-        'vue',
         'vue-router',
         '@vueuse/core',
       ],
@@ -23,9 +21,6 @@ export default defineConfig({
         './src/composables',
       ],
       vueTemplate: true,
-    }),
-    Components({
-      dts: true,
     }),
     UnoCSS(),
     Vue(),
