@@ -10,4 +10,7 @@ export default defineConfig({
   exports: {
     all: true,
   },
+  copy: [
+    { from: 'public', to: 'dist/public' },
+  ],
 })
