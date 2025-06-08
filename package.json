@@ -1,7 +1,7 @@
 {
   "name": "vue-boom",
   "type": "module",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "description": "Some ui components",
   "author": {
@@ -12,25 +12,25 @@
     "url": "https://github.com/zyhnbyyds/vue-boom.git"
   },
   "exports": {
-    ".": {
-      "default": "./dist/index.js"
-    },
-    "./package.json": "./package.json"
+    ".": "./dist/index.js",
+    "./*": "./*"
   },
   "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
     "public"
   ],
   "scripts": {
-    "build": "tsdown",
+    "build": "tsdown --env.NODE_ENV=production",
     "dev": "vite --port 4000 --open",
     "lint": "eslint .",
     "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",
     "test": "vitest",
-    "release": "bumpp & nrm use npm & pnpm publish"
+    "release": "bumpp & nrm use npm & pnpm publish",
+    "prepublishOnly": "pnpm build & pnpm lint & pnpm typecheck"
   },
   "dependencies": {
     "@vueuse/core": "^13.3.0",
