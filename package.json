@@ -30,7 +30,8 @@
     "preview": "vite preview",
     "test": "vitest",
     "release": "bumpp && nrm use npm && pnpm publish",
-    "prerelease": "pnpm build && pnpm lint",
+    "prerelease": "pnpm lint && pnpm build && pnpm uno",
+    "uno": "unocss src/components/*.vue -m -o dist/style.css",
     "postpublish": "nrm use taobao"
   },
   "dependencies": {
@@ -43,6 +44,7 @@
     "@iconify-json/carbon": "^1.2.8",
     "@iconify-json/streamline-emojis": "^1.2.2",
     "@types/node": "^22.15.29",
+    "@unocss/cli": "^66.1.4",
     "@unocss/eslint-config": "^66.1.3",
     "@unocss/reset": "^66.1.3",
     "@vitejs/plugin-vue": "^5.2.4",
