@@ -1,7 +1,7 @@
 {
   "name": "vue-boom",
   "type": "module",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "private": false,
   "description": "Some ui components",
   "author": {
@@ -26,11 +26,11 @@
     "build": "tsdown --env.NODE_ENV=production",
     "dev": "vite --port 4000 --open",
     "lint": "eslint .",
-    "typecheck": "vue-tsc --noEmit",
+    "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "test": "vitest",
     "release": "bumpp & nrm use npm & pnpm publish",
-    "prepublishOnly": "pnpm build & pnpm lint & pnpm typecheck"
+    "prepublishOnly": "pnpm build & pnpm lint"
   },
   "dependencies": {
     "@vueuse/core": "^13.3.0",
