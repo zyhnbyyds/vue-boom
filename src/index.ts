@@ -1,5 +1,1 @@
-import EmojiPicker from './components/EmojiPicker.vue'
-
-export default {
-  EmojiPicker,
-}
+export { default as EmojiPicker } from './components/EmojiPicker.vue'
