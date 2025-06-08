@@ -11,6 +11,13 @@
   "repository": {
     "url": "https://github.com/zyhnbyyds/vue-boom.git"
   },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "tsdown",
     "dev": "vite --port 4000 --open",
