@@ -3,9 +3,10 @@ import Vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
+import { scripts } from './package.json'
 
 export default defineConfig(() => {
-  const isTsDownBuilding = import.meta.env?.npm_lifecycle_script === 'tsdown --env.NODE_ENV=production'
+  const isTsDownBuilding = import.meta.env?.npm_lifecycle_script === scripts.build
 
   return {
     resolve: {
