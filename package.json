@@ -1,4 +1,5 @@
 {
+  "name": "vue-boom",
   "type": "module",
   "private": false,
   "description": "Some ui components",
