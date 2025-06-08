@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "esnext",
     "jsx": "preserve",
     "lib": ["DOM", "ESNext"],
     "baseUrl": ".",
@@ -11,12 +11,15 @@
     },
     "resolveJsonModule": true,
     "types": [
-      "vite/client"
+      "vite/client",
+      "vue"
     ],
     "allowJs": true,
     "strict": true,
     "strictNullChecks": true,
     "noUnusedLocals": true,
+    "declaration": true,
+    "declarationMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
