@@ -22,14 +22,14 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsdown --env.NODE_ENV=production",
+    "build": "tsdown --env.NODE_ENV=production && pnpm uno",
     "dev": "vite --port 4000 --open",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "test": "vitest",
     "release": "bumpp && nrm use npm && pnpm publish",
-    "prerelease": "pnpm lint && pnpm build && pnpm uno",
+    "prerelease": "pnpm lint && pnpm build",
     "uno": "unocss src/components/*.vue -m -o dist/style.css",
     "postpublish": "nrm use taobao"
   },
