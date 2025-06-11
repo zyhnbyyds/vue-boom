@@ -4,6 +4,7 @@ export default defineConfig({
   entry: ['./src/index.ts'],
   platform: 'neutral',
   fromVite: true,
+  silent: true,
   dts: {
     vue: true,
   },
@@ -11,6 +12,6 @@ export default defineConfig({
     all: true,
   },
   copy: [
-    { from: 'public', to: 'dist/public' },
+    { from: 'src/assets', to: 'dist/assets' },
   ],
 })
