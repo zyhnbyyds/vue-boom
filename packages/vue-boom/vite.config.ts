@@ -1,4 +1,3 @@
-import path from 'node:path'
 import Vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -7,11 +6,6 @@ import { isTsDownBuilding } from './src/utils/build'
 
 export default defineConfig(() => {
   return {
-    resolve: {
-      alias: {
-        '~/': `${path.resolve(__dirname, 'src')}/`,
-      },
-    },
     plugins: [
       AutoImport({
         imports: [
