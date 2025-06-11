@@ -3,7 +3,6 @@ import Vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
-import { isTsDownBuilding } from '../src/utils/build'
 
 export default defineConfig(() => {
   return {
@@ -24,7 +23,7 @@ export default defineConfig(() => {
         ],
         vueTemplate: true,
       }),
-      isTsDownBuilding() ? null : UnoCSS(),
+      UnoCSS(),
       Vue(),
     ],
 
