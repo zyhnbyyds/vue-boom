@@ -4,13 +4,13 @@ export default defineConfig({
   entry: ['./src/index.ts'],
   platform: 'neutral',
   fromVite: true,
-  silent: true,
   dts: {
     vue: true,
   },
   exports: {
     all: true,
   },
+  external: ['vue', '@vueuse/core'],
   copy: [
     { from: 'src/assets', to: 'dist/assets' },
   ],
