@@ -1,5 +1,6 @@
 <script lang='ts' setup>
 import { ref } from 'vue'
+import { isTsDownBuilding } from '~/utils/build'
 import { emojiList } from '../config/emoji'
 
 const emits = defineEmits<{
@@ -13,7 +14,7 @@ onClickOutside(pickerRef, () => {
   pickerVisible.value = false
 })
 function hdImgUrl(name: string) {
-  if (import.meta.env.DEV) {
+  if (!isTsDownBuilding()) {
     return new URL(`../assets/emojis/${name}`, import.meta.url).href
   }
   return `/node_modules/vue-boom/dist/assets/emojis/${name}`

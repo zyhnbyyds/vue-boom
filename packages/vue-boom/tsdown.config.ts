@@ -12,6 +12,6 @@ export default defineConfig({
   },
   external: ['vue', '@vueuse/core'],
   copy: [
-    { from: 'src/assets', to: 'dist/assets' },
+    { from: 'assets', to: 'dist/assets' },
   ],
 })
