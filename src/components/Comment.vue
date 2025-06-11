@@ -1,6 +1,7 @@
 <script lang='ts' setup>
 import { computed, ref, useTemplateRef, watch } from 'vue'
 import { parseEmojiContent } from '~/utils/parseEmoji'
+import EmojiPicker from './EmojiPicker.vue'
 import Ipt from './Ipt.vue'
 
 type IptType = InstanceType<typeof Ipt>

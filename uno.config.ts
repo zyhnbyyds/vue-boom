@@ -15,8 +15,12 @@ export default defineConfig({
     presetWind3(),
     presetAttributify(),
     presetIcons({
-      scale: 1.2,
+      prefix: 'i-',
       warn: true,
+      extraProperties: {
+        'display': 'inline-block',
+        'vertical-align': 'middle',
+      },
     }),
     presetWebFonts({
       fonts: {
