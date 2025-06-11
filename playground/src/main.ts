@@ -4,7 +4,7 @@ import App from './App.vue'
 import { routes } from './routes'
 
 import '@unocss/reset/tailwind.css'
-import './styles/main.css'
+import 'vue-boom/index.css'
 import 'uno.css'
 
 const app = createApp(App)

@@ -27,10 +27,5 @@ export default defineConfig(() => {
       isTsDownBuilding() ? null : UnoCSS(),
       Vue(),
     ],
-
-    // https://github.com/vitest-dev/vitest
-    test: {
-      environment: 'jsdom',
-    },
   }
 })
