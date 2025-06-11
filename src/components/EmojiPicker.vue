@@ -13,7 +13,7 @@ onClickOutside(pickerRef, () => {
   pickerVisible.value = false
 })
 function hdImgUrl(name: string) {
-  return `./public/emojis/${name}`
+  return new URL(`../../public/emojis/${name}`, import.meta.url).href
 }
 </script>
 
