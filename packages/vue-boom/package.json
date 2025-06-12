@@ -1,7 +1,7 @@
 {
   "name": "vue-boom",
   "type": "module",
-  "version": "0.1.29",
+  "version": "0.1.30",
   "private": false,
   "description": "Some ui components",
   "author": {
@@ -22,16 +22,15 @@
     "dist"
   ],
   "scripts": {
-    "build": "pnpm uno && tsdown --env.NODE_ENV=production",
+    "build": "tsdown --env.NODE_ENV=production",
     "dev": "vite --port 4000 --open",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "test": "vitest",
     "release": "bumpp && pnpm publish --no-git-checks",
-    "prerelease": "pnpm lint && pnpm build && nrm use npm",
-    "uno": "unocss src/components/*.vue -m -o assets/styles/unocss.css",
-    "postpublish": "nrm use taobao"
+    "prerelease": "pnpm lint && pnpm build",
+    "uno": "unocss src/components/*.vue -m -o assets/styles/unocss.css"
   },
   "dependencies": {
     "@vueuse/core": "^13.3.0",
