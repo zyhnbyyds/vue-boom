@@ -11,4 +11,3 @@ hero:
       text: Components
       link: /Components/EmojiPicker
 ---
-

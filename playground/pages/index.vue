@@ -1,6 +1,5 @@
 <script lang='ts' setup>
 import { ref } from 'vue'
-import { Comment, PreviewImg } from 'vue-boom'
 
 const loading = ref(false)
 </script>

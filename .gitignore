@@ -12,3 +12,5 @@ auto-imports.d.ts
 components.d.ts
 
 docs/.vitepress/cache
+
+assets/styles/unocss.css
