@@ -10,7 +10,7 @@ export default defineConfig({
   exports: {
     all: true,
   },
-  external: ['vue', '@vueuse/core'],
+  external: ['vue', '@vueuse/core', 'unocss'],
   copy: [
     { from: 'assets', to: 'dist/assets' },
   ],

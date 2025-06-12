@@ -13,10 +13,10 @@ onClickOutside(pickerRef, () => {
   pickerVisible.value = false
 })
 function hdImgUrl(name: string) {
-  if (import.meta.env.DEV) {
-    return new URL(`../../assets/emojis/${name}`, import.meta.url).href
+  if (process.env.NODE_ENV === 'production') {
+    return `/node_modules/vue-boom/dist/assets/emojis/${name}`
   }
-  return `/node_modules/vue-boom/dist/assets/emojis/${name}`
+  return new URL(`../../assets/emojis/${name}`, import.meta.url).href
 }
 </script>
 
