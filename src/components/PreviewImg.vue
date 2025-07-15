@@ -4,9 +4,13 @@ import type { PreviewImgInfo } from '../types/previewImg'
 import { inject, nextTick, onBeforeUnmount, reactive, ref, watch } from 'vue'
 import { previewKey } from '../constant'
 
-const { src, active = true } = defineProps<{
+const { src, active = false } = defineProps<{
   src: string
   active?: boolean
+}>()
+
+const emits = defineEmits<{
+  select: [name: string]
 }>()
 
 const imgRef = ref<HTMLImageElement | null>(null)
@@ -83,6 +87,7 @@ function hdClickPreview() {
   if (previewInfo.floating) {
     return
   }
+  emits('select', src)
   previewInfo.visible = true
 }
 
@@ -92,7 +97,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div :style="{ height: (active && previewInfo.floating) ? `${bHeight}px` : '' }" relative>
+  <div w-full :style="{ height: (active && previewInfo.floating) ? `${bHeight}px` : '' }" relative>
     <Teleport to="#previewImg" :disabled="!previewInfo.floating || !active">
       <img
         ref="imgRef"

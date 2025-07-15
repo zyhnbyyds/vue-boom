@@ -19,5 +19,5 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
-  "exclude": ["dist", "node_modules", "eslint.config.mjs", "packages"]
+  "exclude": ["dist", "node_modules", "eslint.config.mjs"]
 }

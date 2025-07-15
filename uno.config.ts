@@ -11,6 +11,7 @@ export default defineConfig({
     presetAttributify(),
     presetIcons({
       warn: true,
+      mode: 'mask',
       extraProperties: {
         'display': 'inline-block',
         'vertical-align': 'middle',

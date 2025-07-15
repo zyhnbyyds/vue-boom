@@ -6,4 +6,9 @@ export const routes: RouteRecordRaw[] = [
     component: () => import('../pages/index.vue'),
     name: 'home',
   },
+  {
+    path: '/calender',
+    component: () => import('../pages/calender/index.vue'),
+    name: 'calender',
+  },
 ]

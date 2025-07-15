@@ -1,14 +1,21 @@
 <script lang='ts' setup>
 import { ref } from 'vue'
 
-const loading = ref(false)
+const isActive = ref<number | null>(null)
+
+function hdSelect(idx: number) {
+  isActive.value = idx
+}
 </script>
 
 <template>
-  <div w-50>
-    <Comment :loading="loading" />
-
-    <PreviewImg :active="true" src="https://raw.githubusercontent.com/antfu/vscode-iconify/refs/heads/main/screenshots/preview-1.png" />
+  <div columns-5 w-full>
+    <div v-for="i in 100" :key="i" w-full>
+      <PreviewImg
+        :active="isActive === i"
+        src="https://raw.githubusercontent.com/antfu/vscode-iconify/refs/heads/main/screenshots/preview-1.png" @select="hdSelect(i)"
+      />
+    </div>
   </div>
 </template>
 
