@@ -13,7 +13,7 @@ export default defineConfig({
   exports: {
     all: true,
   },
-  external: ['vue', '@vueuse/core'],
+  external: ['vue', '@vueuse/core', 'dayjs'],
   copy: [
     { from: 'assets', to: 'dist/assets' },
   ],

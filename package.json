@@ -34,7 +34,7 @@
     "docs:preview": "vitepress preview docs",
     "release": "bumpp && pnpm publish --no-git-checks",
     "prerelease": "pnpm lint:fix && pnpm build",
-    "uno": "unocss src/components/*.vue -m -o assets/styles/unocss.css"
+    "uno": "unocss src/components/**/*.vue -o assets/styles/unocss.css"
   },
   "dependencies": {
     "@vueuse/core": "^13.5.0",
