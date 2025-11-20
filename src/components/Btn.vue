@@ -17,11 +17,11 @@ const classMap = {
 </script>
 
 <template>
-  <button class="text-3.5 text-white border border-gray-200 h-auto cursor-pointer select-none transition-colors self-start" :class="[icon ? 'p2 rounded-full flex items-center justify-center' : ' px-4 py-2 rounded-lg', classMap[theme ?? 'primary']]">
+  <button class="text-3.5 text-white border border-gray-200 h-auto cursor-pointer select-none transition-colors self-start dark:border-dark-400" :class="[icon ? 'p2 rounded-full flex items-center justify-center' : ' px-4 py-2 rounded-lg', classMap[theme ?? 'primary']]">
     <slot v-if="!icon">
       {{ label }}
     </slot>
-    <span v-else class="h5 w5" :class="[icon, theme === 'empty' ? 'text-black' : 'text-white']" />
+    <span v-else dark:text-white class="h5 w5" :class="[icon, theme === 'empty' ? 'text-black' : 'text-white']" />
   </button>
 </template>
 
