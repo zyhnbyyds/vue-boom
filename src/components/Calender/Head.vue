@@ -12,7 +12,7 @@ const emits = defineEmits<{
 </script>
 
 <template>
-  <header h-15 flex gap-5 items-center>
+  <header flex gap-5 h-15 items-center>
     <div flex gap-5 items-center>
       <Btn icon="i-carbon:arrow-left" theme="empty" @click="emits('decreaseMonth')" />
       <Btn icon="i-carbon:arrow-right" theme="empty" @click="emits('addMonth')" />

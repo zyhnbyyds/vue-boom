@@ -9,7 +9,7 @@ function hdSelect(idx: number) {
 </script>
 
 <template>
-  <div columns-5 w-full>
+  <div w-full columns-5>
     <div v-for="i in 100" :key="i" w-full>
       <PreviewImg
         :active="isActive === i"

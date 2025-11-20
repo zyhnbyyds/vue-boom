@@ -17,7 +17,7 @@ const classMap = {
 </script>
 
 <template>
-  <button class="h-auto cursor-pointer border border-gray-200 select-none  text-3.5 text-white transition-colors self-start" :class="[icon ? 'p2 rounded-full flex items-center justify-center' : ' px-4 py-2 rounded-lg', classMap[theme ?? 'primary']]">
+  <button class="text-3.5 text-white border border-gray-200 h-auto cursor-pointer select-none transition-colors self-start" :class="[icon ? 'p2 rounded-full flex items-center justify-center' : ' px-4 py-2 rounded-lg', classMap[theme ?? 'primary']]">
     <slot v-if="!icon">
       {{ label }}
     </slot>

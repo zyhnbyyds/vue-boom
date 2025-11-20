@@ -104,14 +104,14 @@ onBeforeUnmount(() => {
         :style="{ ...(active && previewInfo.floating) ? previewRefStyle : {}, ...{ transitionDuration: `${previewInfo.duration}ms` } }"
         :src="src ?? ''"
         :alt="src ?? ''"
-        w-full
+
         loading="lazy"
         :class="(active && previewInfo.floating) ? 'absolute' : ''"
-        cursor-pointer
-        rounded-md transition-all provider="minio" @click="hdClickPreview"
+
+        rounded-md w-full cursor-pointer transition-all provider="minio" @click="hdClickPreview"
       >
     </Teleport>
-    <div v-if="(active && previewInfo.floating)" ref="boxRef" :style="{ height: `${bHeight}px` }" invisible w-full inline-flex />
+    <div v-if="(active && previewInfo.floating)" ref="boxRef" :style="{ height: `${bHeight}px` }" inline-flex w-full invisible />
   </div>
 </template>
 

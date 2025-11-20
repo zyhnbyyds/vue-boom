@@ -4,6 +4,14 @@ import { weekNumToLabelMap } from './config'
 import Head from './Head.vue'
 import { useCalender } from './useCalender'
 
+export interface CalenderProp {
+  showYear?: boolean
+}
+
+const props = withDefaults(defineProps<CalenderProp>(), {
+  showYear: true,
+})
+
 const { addMonth, decreaseMonth, year, day, month, days } = useCalender()
 
 const nowDate = computed(() => {
@@ -21,26 +29,23 @@ const tagStyle = {
 </script>
 
 <template>
-  <div h-full relative w-full flex-col flex p-3>
+  <div p-3 flex flex-col h-full w-full relative>
     <Head :year="year" :month="month" :day="day" @add-month="addMonth" @decrease-month="decreaseMonth" />
-    <div grid="~ cols-7" h-10 gap-2 w-full>
-      <div v-for="item in 7" :key="`${item}:week`" class="border text-sm justify-center items-center flex h-10 border rounded-md border-light-700">
+    <div grid="~ cols-7" gap-2 h-10 w-full>
+      <div v-for="item in 7" :key="`${item}:week`" class="text-sm border border border-light-700 rounded-md flex h-10 items-center justify-center">
         {{ weekNumToLabelMap[item] ?? '周日' }}
       </div>
     </div>
 
-    <div grid="~ cols-7 rows-5 gap-2" flex-1 w-full mt-1 :class="days.length > 35 ? 'grid-rows-6' : 'grid-rows-5'">
+    <div grid="~ cols-7 rows-5 gap-2" mt-1 flex-1 w-full :class="days.length > 35 ? 'grid-rows-6' : 'grid-rows-5'">
       <div
         v-for="item in days" :key="item.date"
-        class="border border-light-700 cursor-pointer p3 rounded-md"
+        class="p3 border border-light-700 rounded-md min-w-40"
         :class="
           [
             nowDate === `${year}-${month}-${item.day}`
-              ? 'bg-linear-to-rb from-blue-300 bg-op80 to-blue-400 text-white'
-              : 'hover:bg-light4 hover:bg-op60',
-            item.isNextMonth || item.isPrevMonth
-              ? 'op40 bg-gray-200'
-              : '',
+              ? 'bg-linear-to-rb from-blue-300 cursor-pointer bg-op80 to-blue-400 text-white'
+              : item.isNextMonth || item.isPrevMonth ? 'op40 bg-gray-200' : 'hover:bg-light400 transition-colors cursor-pointer hover:bg-op60',
           ]"
       >
         <div mb1 flex justify-between>
@@ -55,13 +60,15 @@ const tagStyle = {
             </span>
           </span>
         </div>
-        <div v-for="event in item.events" :key="`${event.date}:event`" :class="tagStyle.primary" class="bg-gradient-to-bl text-sm px-2 inline rounded-md py-1">
-          {{ event.name }}
-        </div>
+        <slot name="day" :day="item">
+          <div v-for="event in item.events" :key="`${event.date}:event`" :class="tagStyle.primary" class="text-sm px-2 py-1 rounded-md inline bg-gradient-to-bl">
+            {{ event.name }}
+          </div>
+        </slot>
       </div>
     </div>
 
-    <div class="mask absolute left-50% top-50% -translate-x-50% text-nowrap text-45 text-op30 text-gray-200 font-italic -z-1">
+    <div v-if="props.showYear" class="mask text-45 text-gray-200 text-stroke-2 text-stroke-gray-400 op30 text-nowrap font-italic left-50% top-50% absolute -translate-x-50% -z-1">
       {{ year }} {{ dayjs(`${year}-${month}`).format('MM') }}
     </div>
   </div>
