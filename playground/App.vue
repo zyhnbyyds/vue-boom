@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-import { PreviewContainer } from 'vue-boom'
 </script>
 
 <template>
-  <PreviewContainer :duration="700">
+  <div class="h-screen w-screen dark:bg-dark-900">
     <RouterView />
-  </PreviewContainer>
+  </div>
 </template>

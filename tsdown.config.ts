@@ -1,9 +1,9 @@
 import { defineConfig } from 'tsdown'
+import Vue from 'unplugin-vue/rolldown'
 
 export default defineConfig({
   entry: ['./src/index.ts'],
   platform: 'browser',
-  fromVite: true,
   env: {
     NODE_ENV: 'production',
   },
@@ -13,6 +13,7 @@ export default defineConfig({
   exports: {
     all: true,
   },
+  plugins: [Vue({ isProduction: true })],
   external: ['vue', '@vueuse/core'],
   copy: [
     { from: 'assets', to: 'dist/assets' },
