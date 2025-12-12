@@ -7,7 +7,6 @@ export default defineConfig({
   env: {
     NODE_ENV: 'production',
   },
-  unbundle: true,
   dts: {
     vue: true,
   },
