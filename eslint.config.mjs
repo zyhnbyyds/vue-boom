@@ -8,5 +8,8 @@ export default antfu(
       markdown: 'dprint',
     },
     unocss: true,
+    rules: {
+      'pnpm/json-enforce-catalog': 'off',
+    },
   },
 )

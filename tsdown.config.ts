@@ -2,18 +2,19 @@ import { defineConfig } from 'tsdown'
 
 export default defineConfig({
   entry: ['./src/index.ts'],
-  platform: 'neutral',
+  platform: 'browser',
   fromVite: true,
-  define: {
-    'process.env.NODE_ENV': 'production',
+  env: {
+    NODE_ENV: 'production',
   },
+  unbundle: true,
   dts: {
     vue: true,
   },
   exports: {
     all: true,
   },
-  external: ['vue', '@vueuse/core', 'dayjs'],
+  external: ['vue', '@vueuse/core'],
   copy: [
     { from: 'assets', to: 'dist/assets' },
   ],

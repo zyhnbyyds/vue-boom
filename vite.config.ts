@@ -1,13 +1,14 @@
-import { resolve } from 'node:path'
+import { dirname, resolve } from 'node:path'
+import { env } from 'node:process'
+import { fileURLToPath } from 'node:url'
 import Vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Component from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
-import { scripts } from './package.json'
+import pkg from './package.json' with { type: 'json' }
 
-// eslint-disable-next-line node/prefer-global/process
-const isProd = process.env.npm_lifecycle_script === scripts.build
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
   resolve: {
@@ -17,7 +18,7 @@ export default defineConfig({
   },
   plugins: [
     Vue(),
-    isProd ? null : UnoCSS(),
+    env.npm_lifecycle_script === pkg.scripts.build ? [] : UnoCSS(),
     AutoImport({
       imports: ['vue-router', '@vueuse/core', 'vue'],
       dts: true,
@@ -26,7 +27,6 @@ export default defineConfig({
     }),
     Component({
       dts: true,
-      dirs: 'src/components',
     }),
   ],
 })
