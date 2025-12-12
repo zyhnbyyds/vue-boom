@@ -1,7 +1,7 @@
 {
   "name": "vue-boom",
   "type": "module",
-  "version": "0.1.40",
+  "version": "0.2.0",
   "private": false,
   "description": "Some ui components",
   "author": {
